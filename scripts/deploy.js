@@ -1,9 +1,9 @@
 const { ethers } = require("hardhat");
 require("dotenv").config({ path: ".env" });
-const { CRYPTO_DEV_TOKEN_CONTRACT_ADDRESS } = require("../constants");
+const { TOKEN_CONTRACT_ADDRESS } = require("../constants");
 
 async function main() {
-  const cryptoDevTokenAddress = CRYPTO_DEV_TOKEN_CONTRACT_ADDRESS;
+  const cryptoDevTokenAddress = TOKEN_CONTRACT_ADDRESS;
   /*
   A ContractFactory in ethers.js is an abstraction used to deploy new smart contracts,
   so exchangeContract here is a factory for instances of our Exchange contract.
@@ -17,6 +17,7 @@ async function main() {
   await deployedExchangeContract.deployed();
 
   // print the address of the deployed contract
+  //Defi-Exchange Contract Address: 0xdBcc9c0d1B7e464233bC1d4a4beC4B4E153163fE
   console.log("Exchange Contract Address:", deployedExchangeContract.address);
 }
 
